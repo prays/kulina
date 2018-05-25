@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS 'user_review'
+	(
+		'id' INT NOT NULL AUTO_INCREMENT,
+		'order_id' INT,
+		'product_id' INT,
+		'user_id' INT,
+		'rating' DECIMAL(2,1),
+		'review' VARCHAR(255),
+		'created_at' TIMESTAMP DEFAULT NOW(),
+		'updated_at' TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP,
+		PRIMARY KEY ('id')
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=11;
+		
+
+INSERT INTO 'user_review' ('id' ,'order_id','product_id','user_id','rating','review','created_at','updated_at') VALUES
+(1,10,111,011,2.1,'bagus','2018-04-20 16:17:12','2018-05-10 11:17:12'),
+(2,20,211,012,3.1,'lumayan','2017-06-20 10:17:12','2018-03-10 15:17:12'),
+(3,30,311,014,4.1,'bagus','2017-04-10 09:17:10','2018-01-10 11:11:20');
